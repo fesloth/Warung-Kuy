@@ -1,0 +1,22 @@
+{
+  "name": "project-warungkuy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fesloth/Warung-Kuy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fesloth/Warung-Kuy/issues"
+  },
+  "homepage": "https://github.com/fesloth/Warung-Kuy#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
