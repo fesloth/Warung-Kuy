@@ -612,6 +612,7 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+<<<<<<< HEAD
 }
 
 .mt-8 {
@@ -648,6 +649,12 @@ video {
 
 .mb-40 {
   margin-bottom: 10rem;
+=======
+>>>>>>> 15632152bf2264880f1d0e8a6603b481597e86ec
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .flex {
