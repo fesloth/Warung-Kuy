@@ -1,28 +1,50 @@
 const express = require('express');
 const path = require('path');
-const tailwind = require('tailwindcss');
-const postcss = require('postcss');
 
 const app = express();
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'views')));
 
-// Menjalankan Tailwind CSS pada file input.css dan menghasilkan file output.css
-postcss([tailwind])
-  .process('@import "./src/input.css";', { from: './src/input.css', to: './dist/output.css' })
-  .then(result => {
-    const outputFilePath = path.join(__dirname, 'dist', 'output.css');
-    result.warnings().forEach(warn => {
-      console.warn(warn.toString());
-    });
-    fs.writeFileSync(outputFilePath, result.css);
-    console.log(`File output.css berhasil dihasilkan`);
-  })
-  .catch(error => {
-    console.error(`Terjadi kesalahan dalam memproses Tailwind CSS: ${error}`);
-  });
+// Mengirim file index.html sebagai respons ketika mengakses route root ("/")
+app.get('/', (req, res) => {
+  const indexPath = path.join(__dirname, 'index.html');
+  res.sendFile(indexPath);
+});
 
 app.listen(port, () => {
   console.log(`Server berjalan di http://localhost:${port}`);
+});
+
+
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'warung-kuy'
+});
+
+connection.connect((error) => {
+  if (error) {
+    console.error('Gagal terhubung ke database:', error);
+    // Tambahkan notifikasi kesalahan ke pengguna di sini, misalnya menggunakan alert()
+  } else {
+    console.log('Berhasil terhubung ke database');
+    // Tambahkan notifikasi koneksi berhasil ke pengguna di sini, misalnya menggunakan alert()
+  }
+
+  // Melakukan SELECT pada tabel "product"
+  connection.query('SELECT * FROM product', (error, results) => {
+    if (error) {
+      console.error('Gagal melakukan SELECT:', error);
+      return;
+    }
+
+    console.log('Hasil SELECT:');
+    console.log(results);
+
+    // Setelah selesai, tutup koneksi database
+    connection.end();
+  });
 });

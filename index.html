@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product</title>
-    <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body class="bg-slate-100">
     <!-- Container Start -->
@@ -27,7 +27,7 @@
               </div>
             </a>
             <a
-              href=""
+              href="views/transaction.html"
               class="bg-white w-24 h-2/5 rounded-full hover:bg-slate-200 transition ease-in"
             >
               <div
@@ -286,7 +286,7 @@
         <!-- Main Content End -->
         <!-- Cart Content Start -->
         <div class="flex justify-end items-center flex-grow -mr-28">
-            <div class="bg-white w-80 h-4/5 shadow-md rounded-3xl">
+            <div class="bg-white w-80 h-max shadow-md rounded-3xl">
                 <h5 class="font-extrabold p-5 text-xl">MYCART</h5>
                 <!-- Cart Form Start -->
                 <form class="p-5" action="">
@@ -319,32 +319,32 @@
                             <!--- /Product Info -->
                         </div>
                         <div class="flex flex-row justify-between">
-                            <div class="flex flex-row">
-                                <!-- Product Image -->
-                                <img src="assets/product/tmp/fanta.png" alt="cart-product" width="50">
-                                <!-- /Product Image -->
-                                <!-- Product Info -->
-                                <ul class="w-full">
-                                    <li>Fanta</li>
-                                    <li>27000</li>
-                                </ul>
-                                <!-- /Product Info -->
-                            </div>
-                            <div class="flex flex-row items-center gap-1">
-                                <button
-                                class="bg-blue-500 text-white rounded-full text-3xl w-8 h-8 flex flex-grow items-center justify-center pb-1 hover:bg-blue-400"
-                              >
-                                -
-                              </button>
-                              <div>2</div>
+                          <div class="flex flex-row">
+                              <!-- Product Image -->
+                              <img src="assets/product/tmp/fanta.png" alt="cart-product" width="50">
+                              <!-- /Product Image -->
+                              <!-- Product Info -->
+                              <ul class="w-full">
+                                  <li>Fanta</li>
+                                  <li>27000</li>
+                              </ul>
+                              <!-- /Product Info -->
+                          </div>
+                          <div class="flex flex-row items-center gap-1">
                               <button
                               class="bg-blue-500 text-white rounded-full text-3xl w-8 h-8 flex flex-grow items-center justify-center pb-1 hover:bg-blue-400"
                             >
-                              +
+                              -
                             </button>
-                            </div>
-                            <!--- /Product Info -->
-                        </div>
+                            <div>2</div>
+                            <button
+                            class="bg-blue-500 text-white rounded-full text-3xl w-8 h-8 flex flex-grow items-center justify-center pb-1 hover:bg-blue-400"
+                          >
+                            +
+                          </button>
+                          </div>
+                          <!--- /Product Info -->
+                      </div>
                     </div>
                     <div class="flex flex-col gap-6 mt-8">
                         <div class="flex flex-row justify-between">
@@ -367,5 +367,6 @@
       <!-- Row Content End -->
     </div>
     <!-- Container End -->
+    <script src="index.js"></script>
   </body>
 </html>
